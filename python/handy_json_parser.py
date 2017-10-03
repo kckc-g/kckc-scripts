@@ -21,8 +21,8 @@ def main(argv, action=None):
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-f', '--file',         help='Input JSON filename')
-    parser.add_argument('-s', '--json-string',  help='Input JSON filename')
-    parser.add_argument('-o', '--output-file',  help='Input JSON filename')
+    parser.add_argument('-s', '--json-string',  help='Input JSON string')
+    parser.add_argument('-o', '--output-file',  help='Output JSON filename, optional')
 
     args = parser.parse_args()
 
