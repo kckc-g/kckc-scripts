@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # GIT related
+alias g=git
 alias gs='git status'
 alias glg='git log --oneline --decorate --graph --all'
 alias gco='git checkout'
