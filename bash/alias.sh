@@ -16,6 +16,7 @@ alias vi=vim
 alias ls='ls --color=always -B'
 alias ll='ls -l'
 alias ld='ls -d'
+alias ltr='ls -ltr'
 
 alias histgrep='history | grep'
 

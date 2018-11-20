@@ -22,7 +22,7 @@ function cd () {
     
     if [ $# -eq 1 ] && [[ $1 =~ ^-[0-9]$ ]]
     then
-        local pos= $((${#CD_PATH_CACHE[@]}+${i}-1))
+        local pos=$((${#CD_PATH_CACHE[@]}+${1}-1))
         args=${CD_PATH_CACHE[$pos]}
     else
         args="$@"
@@ -31,7 +31,6 @@ function cd () {
     current=`pwd -P`
     
     local index=0
-
     for line in ${CD_PATH_CACHE[@]}; do
         if [ "$line" = "$current" ]
         then

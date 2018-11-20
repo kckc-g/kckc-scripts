@@ -10,3 +10,5 @@ umask 022
 
 export PS1="[\u@\h \W]: "
 
+# for putty set TERM to 256 colors
+if [ "$TERM" = xterm ]; then TERM=xterm-256color; fi
