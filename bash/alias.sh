@@ -20,4 +20,10 @@ alias ltr='ls -ltr'
 
 alias histgrep='history | grep'
 
+if [ -e "/proc/sys/kernel/random/uuid" ]
+then
+    alias uuid='cat /proc/sys/kernel/random/uuid'
+else
+    alias uuid=/usr/bin/uuidgen
+fi
 
