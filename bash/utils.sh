@@ -28,5 +28,12 @@ function findgrep {
         PATTERN=$1
         shift
     fi
-    find $DIR -name "*.$PATTERN" | xargs grep -s -H --color "$@"
+
+    if ! [ -z "$@" ]
+    then
+        find $DIR -name "$PATTERN" | xargs grep -s -H --color "$@"
+    else
+        echo "Missing grep search pattern"
+        return 1
+    fi
 }
