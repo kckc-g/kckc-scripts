@@ -1,7 +1,10 @@
 set mouse=
 
 :color molokai
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 :syntax on
+:set hlsearch
+:set nowrap
 
 let g:python_highlight_all = 1
 let g:molokai_original = 1

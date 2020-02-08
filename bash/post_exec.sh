@@ -40,6 +40,8 @@ export POSTEXEC_EXE_FILE="${POSTEXEC_CMD_FILE}.exec"
 # This is ok as the temp files are used immediate after creation
 find ${BASE_DIR} -maxdepth 1 -mtime +1 -name 'postexec.*' -delete
 
+unset BASE_DIR
+
 # Check that we dont have the temp files stamped with current session's uuid
 if [ -e ${POSTEXEC_CMD_FILE} ] || [ -e ${POSTEXEC_EXE_FILE} ]
 then
