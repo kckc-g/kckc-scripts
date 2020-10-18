@@ -10,7 +10,7 @@ echo "" >> ${BASHRC}
 
 for f in `/bin/ls -1 ${BASE_DIR}/bash/*.sh`
 do
-    echo ". ${BASE_DIR}/$(basename $f)" >> ${BASHRC}
+    echo ". ${BASE_DIR}/bash/$(basename $f)" >> ${BASHRC}
 done
            
 echo "" >> ${BASHRC}
