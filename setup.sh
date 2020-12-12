@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export BASE_DIR=$(dirname $BASH_SOURCE)
-export BASE_DIR=$(realpath $BASE_DIR)
+export BASE_DIR=$(cd "$(dirname ${BASH_SOURCE[0]})"; pwd -P)
 
 # Bash Script Setup
 BASHRC=${1:-~/.bashrc}
@@ -10,11 +9,10 @@ echo "" >> ${BASHRC}
 
 for f in `/bin/ls -1 ${BASE_DIR}/bash/*.sh`
 do
-    echo ". ${BASE_DIR}/$(basename $f)" >> ${BASHRC}
+    echo ". ${BASE_DIR}/bash/$(basename $f)" >> ${BASHRC}
 done
            
 echo "" >> ${BASHRC}
-
 
 # SETUP vim
 ln -s $BASE_DIR/vim ~/.vim

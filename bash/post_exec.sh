@@ -31,7 +31,12 @@ then
 	echo "Unable to set permission to 700 for dir: ${BASE_DIR}"
 fi
 
-export SESSION_UUID=$(uuid | tr -dc 'a-zA-Z0-9')
+if [ -e "/proc/sys/kernel/random/uuid" ]
+then
+    export SESSION_UUID=$(cat /proc/sys/kernel/random/uuid | tr -dc 'a-zA-Z0-9')
+else
+    export SESSION_UUID=$(/usr/bin/uuidgen | tr -dc 'a-zA-Z0-9')
+fi
 
 export POSTEXEC_CMD_FILE="${BASE_DIR}/postexec.${SESSION_UUID}"
 export POSTEXEC_EXE_FILE="${POSTEXEC_CMD_FILE}.exec"

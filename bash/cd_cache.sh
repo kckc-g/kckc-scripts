@@ -3,8 +3,14 @@
 CD_PATH_CACHE_MAX=10
 
 function cd () {
+
     if [ $# -eq 0 ]
     then
+        if [ -z "$CD_PATH_CACHE" ];
+        then
+	    return
+        fi
+
         for i in $(seq 0 $((${#CD_PATH_CACHE[@]}-1)))
         do 
             if [ $(($i % 2)) -eq 0 ]
@@ -22,6 +28,11 @@ function cd () {
     
     if [ $# -eq 1 ] && [[ $1 =~ ^-[0-9]$ ]]
     then
+        if [ -z "$CD_PATH_CACHE" ];
+        then
+	    return
+        fi
+
         local pos=$((${#CD_PATH_CACHE[@]}+${1}-1))
         args=${CD_PATH_CACHE[$pos]}
     else

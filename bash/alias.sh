@@ -13,7 +13,13 @@ alias gdelbranch='git branch -D'
 
 alias vi=vim
 
-alias ls='ls --color=always -B'
+if [ "$(uname)" == "Darwin" ];
+then
+    alias ls='ls -G -B'
+else
+    alias ls='ls --color=always -B'
+fi
+
 alias ll='ls -l'
 alias ld='ls -d'
 alias ltr='ls -ltr'
