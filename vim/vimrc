@@ -6,6 +6,14 @@ set mouse=
 :set hlsearch
 :set nowrap
 
+" Fix home/end key in all modes
+map <esc>OH <home>
+cmap <esc>OH <home>
+imap <esc>OH <home>
+map <esc>OF <end>
+cmap <esc>OF <end>
+imap <esc>OF <end>
+
 let g:python_highlight_all = 1
 let g:molokai_original = 1
 
